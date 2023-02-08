@@ -1,0 +1,43 @@
+var readlineSync = require('readline-sync');
+var questions = [
+  {
+    q: "where do  chaitali leave?",
+    a: "Gaya"
+  },
+  {
+    q: "what is my surname?",
+    a: "kumari"
+  },
+  {
+    q: "what is my favourite food?",
+    a: "chinese"
+  },
+  {
+    q: "what is my favourite web series?",
+    a: "my girlfriend allien"
+  },
+  {
+    q: "what is my favourite trip destination?",
+    a: "hills"
+  }];
+
+var name = readlineSync.question("enter your name");
+console.log("welcome " + name + " to the quiz");
+var score = 0;
+//
+for (var i = 0; i < questions.length; i++) {
+  play(questions[i].q, questions[i].a);
+}
+function play(question, answer) {
+  var userans = readlineSync.question(question);
+
+  if (userans == answer) {
+    console.log("right");
+    score = score + 1;
+  }
+  else {
+    console.log("wrong");
+  }
+
+}
+console.log("final score be: " + score + "/5");
