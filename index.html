@@ -1,27 +1,27 @@
 var readlineSync = require('readline-sync');
 var questions = [
   {
-    q: "where do  chaitali leave?",
-    a: "Gaya"
+    q: "where do  chaitali leave?\n 1)Patna \n 2)gaya \n",
+    a: "gaya"
   },
   {
-    q: "what is my surname?",
+    q: "what is my surname?\n 1)Raj \n 2)kumari \n",
     a: "kumari"
   },
   {
-    q: "what is my favourite food?",
+    q: "what is my favourite food?\n 1)chinese \n 2)indian.\n",
     a: "chinese"
   },
   {
-    q: "what is my favourite web series?",
-    a: "my girlfriend allien"
+    q: "what is my favourite web series?\n 1)my girlfriend is allien \n 2) put your head on my shoulder \n",
+    a: "put your head on my shoulder"
   },
   {
-    q: "what is my favourite trip destination?",
+    q: "what is my favourite trip destination?\n 1)hills \n 2)beach.\n",
     a: "hills"
   }];
 
-var name = readlineSync.question("enter your name");
+var name = readlineSync.question("enter your name\n");
 console.log("welcome " + name + " to the quiz");
 var score = 0;
 //
@@ -30,14 +30,15 @@ for (var i = 0; i < questions.length; i++) {
 }
 function play(question, answer) {
   var userans = readlineSync.question(question);
+  
 
-  if (userans == answer) {
-    console.log("right");
+  if (userans.toLowerCase() == answer) {
+    console.log("Ans=right");
     score = score + 1;
   }
   else {
-    console.log("wrong");
+    console.log("Ans=wrong");
   }
 
 }
-console.log("final score be: " + score + "/5");
+console.log(name+" your final score is: " + score + "/5");
